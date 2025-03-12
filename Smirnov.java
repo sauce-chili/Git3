@@ -118,7 +118,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         SecurityContextHolder.getContext().setAuthentication(
                 new UsernamePasswordAuthenticationToken(
                         userId,
-                        null,
+                        null, // no password due using JWT
                         List.of()
                 )
         );
