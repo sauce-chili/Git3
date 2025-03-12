@@ -1,8 +1,10 @@
 public class GitTest {
-
+	//second commit in main Bend
     private final String fio;
 
     private final int age;
+	
+	private String name;
 
     public int getAge() {
         return this.age;
@@ -16,5 +18,7 @@ public class GitTest {
         this.fio = fio;
         this.age = age;
     }
+	
+	
 
 }

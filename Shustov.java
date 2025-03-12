@@ -1,6 +1,7 @@
 
 class Person {
 
+    // Second commit in Shustov branch
     private String name;
 
     private int age;
@@ -14,4 +15,11 @@ class Person {
     }
 
     // it's my second commit in main branch
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 }
