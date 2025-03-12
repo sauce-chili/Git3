@@ -52,15 +52,15 @@ public class Robot {
     void setActive(boolean value) {
         isActive = value;
     }
-
+//Act
     public boolean isActive() {
         return isActive;
     }
-
+//setBat
     public void setBattery(Battery battery) {
         this.battery = battery;
     }
-
+//getCharge
     public int getCharge() {
         return battery.charge();
     }
