@@ -19,6 +19,8 @@ public class GitTest {
         this.age = age;
     }
 	
-	
-
+	public void helloWorld() {
+		std::cout<< "Hello";
+	}
+//second commit branch Bend
 }

@@ -14,10 +14,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-
-        _rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-
-        LastMovedVector = Vector3.right;
     }
 
     private void Update()
@@ -46,14 +42,18 @@ public class PlayerMovement : MonoBehaviour
         if (MovementVector.x!=0 || MovementVector.z!=0)
         {
             LastMovedVector = new Vector3(MovementVector.x, 0, MovementVector.z);
+            //Second commit in main
         }
     }
 
 
     private void MoveLogic()
     {
-        _rb.AddForce(MovementVector * _speed);
-        transform.rotation = Quaternion.LookRotation(LastMovedVector);
+        if (_speed>0)
+        {
+            _rb.AddForce(MovementVector * _speed);
+            transform.rotation = Quaternion.LookRotation(LastMovedVector);
+        }
     }
 
 
