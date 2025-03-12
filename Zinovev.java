@@ -13,4 +13,9 @@ public class Bomb {
     public void doubleRadius() {
         _radius *= 2;
     }
+
+    public int bombardiroCrocodilo() {
+        int bombardiroGusini = _radius;
+        return bombardiroGusini * 3;
+    }
 }
