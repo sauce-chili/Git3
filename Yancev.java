@@ -35,20 +35,20 @@ public class Robot {
             }
         }
     }
-
+//Bat
     public void changeBattery() {
         if(isActive && position.getBattery() != null){
             battery = position.takeBattery();
         }
     }
-
+//skipStep
     public void skipStep() {
         if(isActive) {
             spendBatteryCharge(amountOfChargeForSkipStep(), true);
             fireRobotIsSkipStep();
         }
     }
-
+//setAct
     void setActive(boolean value) {
         isActive = value;
     }
