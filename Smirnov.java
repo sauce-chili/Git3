@@ -75,7 +75,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     private JwtClaims verifyToken(String token) {
         try {
 
-            JwtClaims claims = getClaims(token);
+            JwtClaims claims = getClaims(token); // also throws exception if token expired or in invalid format
 
             if (!claimsContainsMandatoryFields(claims)) {
                 return null;
