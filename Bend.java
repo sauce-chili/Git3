@@ -16,5 +16,9 @@ public class GitTest {
         this.fio = fio;
         this.age = age;
     }
+	
+	public void helloWorld() {
+		std::cout<< "Hello";
+	}
 
 }
