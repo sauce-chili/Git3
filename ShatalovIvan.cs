@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (MovementVector.x!=0 || MovementVector.z!=0)
         {
             LastMovedVector = new Vector3(MovementVector.x, 0, MovementVector.z);
+            //Second commit in main
         }
     }
 
