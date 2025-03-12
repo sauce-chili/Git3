@@ -1,6 +1,6 @@
 public class Bomb {
 
-    private int _radius = 1;
+    private int _radius = 2;
 
     public int getRadius() {
         return _radius;
