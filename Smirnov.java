@@ -31,7 +31,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
     private final String TOKEN_PREFIX = "Bearer ";
 
-    private final String USER_ID_TOKEN_KEY = "userId";
+    private final String USER_ID_TOKEN_KEY = "user_id";
 
     private final JwtConsumer jwtParser = new JwtConsumerBuilder()
             .setSkipSignatureVerification()
@@ -118,7 +118,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         SecurityContextHolder.getContext().setAuthentication(
                 new UsernamePasswordAuthenticationToken(
                         userId,
-                        null,
+                        null, // no password due using JWT
                         List.of()
                 )
         );
