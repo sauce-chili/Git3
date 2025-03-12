@@ -9,4 +9,8 @@ public class Bomb {
     public void setRadius(int r) {
         _radius = r;
     }
+
+    public void doubleRadius() {
+        _radius *= 2;
+    }
 }
