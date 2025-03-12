@@ -1,6 +1,7 @@
 
 class Person {
 
+    // Second commit in Shustov branch
     private String name;
 
     public String getName() {
