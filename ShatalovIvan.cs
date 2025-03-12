@@ -46,14 +46,18 @@ public class PlayerMovement : MonoBehaviour
         if (MovementVector.x!=0 || MovementVector.z!=0)
         {
             LastMovedVector = new Vector3(MovementVector.x, 0, MovementVector.z);
+            //SetLastMovedVector comment
         }
     }
 
 
     private void MoveLogic()
     {
-        _rb.AddForce(MovementVector * _speed);
-        transform.rotation = Quaternion.LookRotation(LastMovedVector);
+        if (_speed>0)
+        {
+            _rb.AddForce(MovementVector * _speed);
+            transform.rotation = Quaternion.LookRotation(LastMovedVector);
+        }
     }
 
 
