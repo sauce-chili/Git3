@@ -35,32 +35,32 @@ public class Robot {
             }
         }
     }
-
+//Bat
     public void changeBattery() {
         if(isActive && position.getBattery() != null){
             battery = position.takeBattery();
         }
     }
-
+//skipStep
     public void skipStep() {
         if(isActive) {
             spendBatteryCharge(amountOfChargeForSkipStep(), true);
             fireRobotIsSkipStep();
         }
     }
-
+//setAct
     void setActive(boolean value) {
         isActive = value;
     }
-
+//Act
     public boolean isActive() {
         return isActive;
     }
-
+//setBat
     public void setBattery(Battery battery) {
         this.battery = battery;
     }
-
+//getCharge
     public int getCharge() {
         return battery.charge();
     }
