@@ -48,10 +48,11 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
         if (token != null) {
 
-            String userId = verifyTokenAndGetUserId(token);
-            boolean isTokenValid = userId != null;
+            JwtClaims claims = verifyToken(token);
+            boolean isTokenValid = claims != null;
 
             if (isTokenValid) {
+                String userId = getUserId(claims);
                 saveAuthentication(userId);
                 request.setAttribute(userIdHeaderAttribute, userId);
             } else {
@@ -71,7 +72,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         return header.substring(TOKEN_PREFIX.length());
     }
 
-    private String verifyTokenAndGetUserId(String token) {
+    private JwtClaims verifyToken(String token) {
         try {
 
             JwtClaims claims = getClaims(token);
@@ -87,7 +88,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                 log.error("Failed to verify token", e);
             }
 
-            return isTokenValid ? getUserId(claims) : null;
+            return isTokenValid ? claims : null;
         } catch (Exception e) {
             return null;
         }
