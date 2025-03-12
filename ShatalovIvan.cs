@@ -52,8 +52,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void MoveLogic()
     {
-        _rb.AddForce(MovementVector * _speed);
-        transform.rotation = Quaternion.LookRotation(LastMovedVector);
+        if (_speed>0)
+        {
+            _rb.AddForce(MovementVector * _speed);
+            transform.rotation = Quaternion.LookRotation(LastMovedVector);
+        }
     }
 
 
