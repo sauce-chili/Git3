@@ -12,6 +12,7 @@ class Solution {
 
             usedChars.add(s.charAt(right));
 
+            // Hello boss, it's my second cpmmit in branch
             maxLen = Math.max(maxLen, usedChars.size());
         }
 
